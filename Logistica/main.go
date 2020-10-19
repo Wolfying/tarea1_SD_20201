@@ -1,4 +1,4 @@
-package logistica
+package main
 
 func main() {
 
