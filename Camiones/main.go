@@ -12,7 +12,7 @@ import (
 
 const (
 	retail      int = 1
-	normal      int = 2
+	normal      int = 2 //pyme
 	prioritario int = 3
 )
 

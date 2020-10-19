@@ -7,7 +7,6 @@ option java_multiple_files = true;
 
 package logistica;
 
-
 service logisticaOrdenes {
     rpc ingresarOrden (orden) returns (response) {}
     rpc consultaSeguimiento (response) returns (response) {}
