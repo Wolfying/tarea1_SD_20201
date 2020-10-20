@@ -2,7 +2,9 @@ package main
 
 import (
 	"log"
+	"math/rand"
 	"net"
+	"tarea1/Logistica/logistica"
 
 	"google.golang.org/grpc"
 )
@@ -13,7 +15,7 @@ const (
 )
 
 type server struct {
-	pb.UnimplementedGreeterServer
+	logistica.UnimplementedLogisticaOrdenesServer
 }
 
 func main() {
@@ -21,9 +23,9 @@ func main() {
 	if err != nil {
 		log.Fatalf("failed to listen: %v", err)
 	}
-
+	rand.Seed(20)
 	s := grpc.NewServer()
-	pb.RegisterGreeterServer(s, &server{})
+	logistica.RegisterLogisticaOrdenesServer(s, &server{})
 	if err := s.Serve(lis); err != nil {
 		log.Fatalf("failed to serve: %v", err)
 	}
